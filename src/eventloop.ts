@@ -93,19 +93,24 @@ export const intervalFunc = async () => {
 export const startEventLoopTest = async () => {
   console.log("\x1b[33m", "вызов readLongFile");
   readLongFile();
+
   console.log("\x1b[33m", `вызов intervalFunc`);
   const intervalId = await intervalFunc();
+
   console.log("\x1b[33m", "вызов nextTickFunc первый раз");
   nextTickFunc();
-  console.log("\x1b[33m", "вызов secTimeoutFunc");
 
+  console.log("\x1b[33m", "вызов secTimeoutFunc");
   secTimeoutFunc(() => {
     clearInterval(intervalId); // остановка setInterval() сразу после выполнения setTimeout()
   });
+
   console.log("\x1b[33m", "вызов immediateFunc");
   immediateFunc();
+
   console.log("\x1b[33m", "вызов zeroTimeoutFunc");
   zeroTimeoutFunc();
+
   console.log("\x1b[33m", "вызов nextTickFunc второй раз");
   nextTickFunc();
 };

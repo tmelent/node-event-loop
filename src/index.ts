@@ -1,9 +1,13 @@
-import { startEventLoopTest } from "./eventloop";
+// import { startEventLoopTest } from "./eventloop";
+
+import { executePromiseDemo } from "./promise";
+
+// import { executeAsyncDemo } from "./async";
 
 const main = async () => {
-  startEventLoopTest();
+  //   startEventLoopTest();
+  //   executeAsyncDemo();
+  executePromiseDemo();
 };
 
-
 main();
- 
