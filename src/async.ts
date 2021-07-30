@@ -9,5 +9,6 @@ const doSomething = async () => {
 export const executeAsyncDemo = async () => {
   console.log(doSomething()); // вернется Promise { 0 }
   console.log(await doSomething()); // вернется 0
-  doSomething().then((i) => console.log(i)); // вернется так же 0
+  // можно применить then вместо await, так как всё равно возвращается промис
+  doSomething().then((i) => console.log(i)); // вернется так же 0 
 };
