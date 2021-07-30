@@ -14,7 +14,7 @@ const isFive = (num: number): Promise<number> => {
 };
 
 export const executePromiseDemo = async () => {
-  // resolved
+  // fulfilled
   isFive(5)
     .then((i) => {
       console.log(`Promise resolved: ${i}`);
@@ -23,7 +23,8 @@ export const executePromiseDemo = async () => {
       console.log(err);
     });
 
-  console.log(isFive(4).catch((e) => console.log(e))); // fulfilled
+  // pending -> rejected
+  console.log(isFive(4).catch((e) => console.log(e)));
 
   // rejected
   isFive(9)
